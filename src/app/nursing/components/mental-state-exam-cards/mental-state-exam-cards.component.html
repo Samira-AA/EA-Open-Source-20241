@@ -1,0 +1,16 @@
+<div class="container">
+  <ng-container *ngFor="let data of examData">
+    <mat-card aria-label="Mental State Exam">
+      <mat-card-content>
+        <img [src]="data.patient.photoUrl" alt="{{data.patient.photoUrl}}">
+        <p aria-label="Patient Name">Patient name: {{ data.patient.firstName + ' ' + data.patient.lastName }}</p>
+        <p aria-label="Born Date">Born date: {{ data.patient.birthDate }}</p>
+        <p aria-label="Exam Date">Exam Date: {{ data.mentalStateExam.examDate }}</p>
+        <p aria-label="Examiner Name">Examiner Name: {{ data.examiner.firstName + ' ' + data.examiner.lastName }}</p>
+        <p aria-label="Examiner national provider identifier">Examiner national provider identifier: {{ data.examiner.nationalProviderIdentifier }}</p>
+        <p aria-label="Total Score">Total Score: {{ TotalScore(data.mentalStateExam) }}</p>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+
+</div>
